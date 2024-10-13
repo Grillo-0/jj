@@ -37,6 +37,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 * New template function `raw_escape_sequence(...)` preserves escape sequences.
 
+* `bultin_log_compact()` now have an `full_description` argument.
+
 ### Fixed bugs
 
 * Error on `trunk()` revset resolution is now handled gracefully.

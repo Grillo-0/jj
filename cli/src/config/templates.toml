@@ -33,7 +33,7 @@ concat(
 )
 '''
 
-log = 'builtin_log_compact'
+log = 'builtin_log_compact(false)'
 op_log = 'builtin_op_log_compact'
 show = 'builtin_log_detailed'
 
@@ -74,7 +74,7 @@ if(root,
   )
 )
 '''
-builtin_log_compact = '''
+'builtin_log_compact(full_description)' = '''
 if(root,
   format_root_commit(self),
   label(if(current_working_copy, "working_copy"),
@@ -93,7 +93,7 @@ if(root,
       separate(" ",
         if(empty, label("empty", "(empty)")),
         if(description,
-          description.first_line(),
+          if(full_description, description, description.first_line()),
           label(if(empty, "empty"), description_placeholder),
         ),
       ) ++ "\n",
@@ -101,7 +101,7 @@ if(root,
   )
 )
 '''
-builtin_log_comfortable = 'builtin_log_compact ++ "\n"'
+builtin_log_comfortable = 'builtin_log_compact(false) ++ "\n"'
 builtin_log_detailed = '''
 concat(
   "Commit ID: " ++ commit_id ++ "\n",
