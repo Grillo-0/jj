@@ -311,6 +311,29 @@ concat(
 'format_field(key, value)' = 'key ++ ": " ++ value ++ "\n"'
 ```
 
+## Builtin Functions
+
+JJ has some builtin functions to use as the default template for the
+subcommands.
+
+* `bultin_log_comfortable`: `bultin_log_compact` with a newline.
+* `bultin_log_compact(full_description: Bool)`: Default template for `jj log`.
+  `full_description` sets if the full commmit description is shown, or just the
+  fisrt line.
+* `bultin_log_detailed`: Default template for `jj show`.
+* `bultin_log_oneline`: Template for showing commits on one line.
+* `bultin_op_log_compact_comfortable`: `bultin_op_log_compact` with a newline.
+* `bultin_op_log_compact`: Default template for `jj op log`.
+
+* `bultin_log_node_ascii`: Template for displaying the node on the ascii style
+  on `jj log`.
+* `bultin_log_node`: Template for displaying the node on a non ascii style on
+  `jj log`.
+* `bultin_op_log_node`: Template for displaying the node on a non ascii style on
+  `jj op log`.
+* `bultin_op_log_node_ascii`: Template for displaying the node on the ascii
+  style on `jj op log`.
+
 ## Examples
 
 Get short commit IDs of the working-copy parents:
